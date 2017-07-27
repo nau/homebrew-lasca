@@ -14,8 +14,8 @@ class LascaCompiler < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
 
     # Remove unrecognized options if warned by configure
-    bin.install Dir["dist/lasca"]
-    lib.install Dir["dist/liblascart.so"]
+    bin.install "lasca"
+    lib.install "liblascart.so"
   end
 
   test do
