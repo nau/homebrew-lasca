@@ -6,16 +6,18 @@ class LascaCompiler < Formula
   desc "Lasca is Scala shifted towards Haskell."
   homepage "http://lasca-lang.org"
   url "https://github.com/nau/lasca-compiler/releases/download/latest/lasca-0.0.1.tar.gz"
-  sha256 "94ddb63fda6fb6bf9a85ef34f093c67bfda2681a0a5aaa9c17deeb6c72253dc0"
+  sha256 "0edfcecd9d945a143d28f326c65a45093fcd9ea93fc79642730ee0cf8145df55"
 
   # depends_on "cmake" => :build
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
-
+    ENV.prepend_create_path "LASCA_HOME", prefix
     # Remove unrecognized options if warned by configure
     bin.install "lasca"
     lib.install "liblascart.so"
+    src = prefix/"src"
+    src.install Dir["src/*"]
   end
 
   test do
