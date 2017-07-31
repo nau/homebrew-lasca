@@ -6,7 +6,7 @@ class LascaCompiler < Formula
   desc "Lasca is Scala shifted towards Haskell."
   homepage "http://lasca-lang.org"
   url "https://github.com/nau/lasca-compiler/releases/download/latest/lasca-0.0.1.tar.gz"
-  sha256 "02a73f534f5fe62ac007e8cae4ea47eaa77d4ad40877f34f85bb6f48219312b2"
+  sha256 "d8591fb2b7e4743c15d10de811a35c960f656b791e5b76de7489b8f0757b8cf5"
 
   # depends_on "cmake" => :build
 
