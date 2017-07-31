@@ -6,7 +6,7 @@ class LascaCompiler < Formula
   desc "Lasca is Scala shifted towards Haskell."
   homepage "http://lasca-lang.org"
   url "https://github.com/nau/lasca-compiler/releases/download/latest/lasca-0.0.1.tar.gz"
-  sha256 "0edfcecd9d945a143d28f326c65a45093fcd9ea93fc79642730ee0cf8145df55"
+  sha256 "02a73f534f5fe62ac007e8cae4ea47eaa77d4ad40877f34f85bb6f48219312b2"
 
   # depends_on "cmake" => :build
 
@@ -18,6 +18,8 @@ class LascaCompiler < Formula
     lib.install "liblascart.so"
     src = prefix/"src"
     src.install Dir["src/*"]
+    bash_completion = prefix/"etc"/"bash_completion.d"
+    bash_completion.install Dir["bash_completion/*"]
   end
 
   test do
