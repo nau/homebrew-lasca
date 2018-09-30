@@ -5,15 +5,16 @@
 class LascaCompiler < Formula
   desc "Lasca is Scala shifted towards Haskell."
   homepage "http://lasca-lang.org"
-  url "https://github.com/nau/lasca-compiler/releases/download/latest/lasca-0.1.0.tar.gz"
-  sha256 "29c5d746d645c957a005ba18d7c3bf8fc9f26eb77d3efe515b2465f6a665836a"
+  url "https://github.com/nau/lasca-compiler/releases/download/v0.0.1/lasca-0.0.1.tar.gz"
+  sha256 "008f536ca0f31a5ac6be7c0faf7e93c157bf8f50fb43f2f8679a32aa9d9defb1"
 
-  # depends_on "cmake" => :build
+  depends_on "boehmgc" => :build
+  depends_on "pcre2" => :build
+  depends_on "llvm@6" => :build
 
   def install
     # Remove unrecognized options if warned by configure
     bin.install "lasca"
-    lib.install "liblascart.a"
     src = prefix/"src"
     src.install Dir["src/*"]
     bash_completion = prefix/"etc"/"bash_completion.d"
