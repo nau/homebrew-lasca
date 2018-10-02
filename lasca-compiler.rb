@@ -8,7 +8,7 @@ class LascaCompiler < Formula
   depends_on "pcre2" => :build
 
   def install
-    bin.install "bin"/"lasca"
+    bin.install "bin/lasca"
     lib.install Dir["lib/*"]
     src = prefix/"src"
     src.install Dir["src/*"]
