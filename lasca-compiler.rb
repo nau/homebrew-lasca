@@ -1,20 +1,15 @@
-# Documentation: http://docs.brew.sh/Formula-Cookbook.html
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class LascaCompiler < Formula
-  desc "Lasca is Scala shifted towards Haskell."
+  desc "Lasca is Scala shifted towards Haskell"
   homepage "http://lasca-lang.org"
   url "https://github.com/nau/lasca-compiler/releases/download/v0.0.1/lasca-0.0.1.tar.gz"
-  sha256 "d9601b1779236df48ca0f10eef56a7348d9a501d579e8032d20c98c8fa7664a8"
+  sha256 "2cc538ef1c20b1f97e709dd20feca6091e79d34cd41d9126200063133a875ee8"
 
-  depends_on "boehmgc" => :build
+  depends_on "bdw-gc" => :build
   depends_on "pcre2" => :build
-  depends_on "llvm@6" => :build
 
   def install
-    # Remove unrecognized options if warned by configure
-    bin.install "lasca"
+    bin.install "bin"/"lasca"
+    lib.install Dir["lib/*"]
     src = prefix/"src"
     src.install Dir["src/*"]
     bash_completion = prefix/"etc"/"bash_completion.d"
