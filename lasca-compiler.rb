@@ -2,7 +2,7 @@ class LascaCompiler < Formula
   desc "Lasca is Scala shifted towards Haskell"
   homepage "http://lasca-lang.org"
   url "https://github.com/nau/lasca-compiler/releases/download/v0.0.2/lasca-0.0.2.tar.gz"
-  sha256 "85b0be562e94ff28bcb2bc3aa2d3796ae6f02da9e13c44e5b331d2c47efedcd7"
+  sha256 "c1f92075f9f112ce2d7f99189dab256583681a5709285dd431a372ce4cf1903f"
 
   depends_on "bdw-gc" => :build
   depends_on "pcre2" => :build
